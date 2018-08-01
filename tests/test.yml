@@ -1,0 +1,4 @@
+---
+- hosts: all
+  roles:
+    - ../../trellis-purge-kinsta-cache-during-deploy
