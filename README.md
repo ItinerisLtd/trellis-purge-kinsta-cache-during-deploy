@@ -15,8 +15,7 @@ Purge [Kinsta](https://bit.ly/2NWj3sg) cache when [Trellis](https://github.com/r
 - [Role Variables](#role-variables)
 - [Usage](#usage)
 - [FAQs](#faqs)
-  - [What is `kinsta_purge_cache_endpoint`?](#what-is-kinsta_purge_cache_endpoint)
-  - [Where can I find my `kinsta_purge_cache_endpoint`?](#where-can-i-find-my-kinsta_purge_cache_endpoint)
+  - [How do you purge Kinsta cache?](#how-do-you-purge-kinsta-cache)
 - [See Also](#see-also)
 - [Testing](#testing)
   - [Syntax Check](#syntax-check)
@@ -57,27 +56,17 @@ deploy_after:
   - "{{ playbook_dir }}/vendor/roles/trellis-purge-kinsta-cache-during-deploy/tasks/main.yml"
 ```
 
-Define `kinsta_purge_cache_endpoint` in `group_vars/<env>/kinsta.yml`:
-```yaml
-# group_vars/<env>/kinsta.yml
-# Ask Kinsta support for the URL to clearing the cache on your site
-# Use full URL, i.e: starts with `https://`
-kinsta_purge_cache_endpoint: 'https://aaa.com/bbb/ccc?ddd=eee'
-```
-
 ## Usage
 
 [Deploy](https://roots.io/trellis/docs/deploys/#example) as usual. No special action needed.
 
 ## FAQs
 
-### What is `kinsta_purge_cache_endpoint`?
+### How do you purge Kinsta cache?
 
-The URL to trigger Kinsta cache purging, same as clicking the purge button on web UI. Each environment(production, staging, etc) has its own unique `kinsta_purge_cache_endpoint`.
+By requesting `{{ site_env.wp_home }}/kinsta-clear-cache-all/` via HTTP GET.
 
-### Where can I find my `kinsta_purge_cache_endpoint`?
-
-Ask Kinsta support.
+The full URL will be logged to console during deploy. Confirm it with Kinsta support team.
 
 ## See Also
 
