@@ -1,8 +1,16 @@
 # Change Log
 
+## [0.2.0](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy/tree/0.2.0) (2018-08-06)
+[Full Changelog](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy/compare/0.1.0...0.2.0)
+
+**Merged pull requests:**
+
+- Use one-size-fits-all `kinsta\_purge\_cache\_endpoint` [\#4](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy/pull/4) ([TangRufus](https://github.com/TangRufus))
+
 ## [0.1.0](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy/tree/0.1.0) (2018-08-01)
 **Merged pull requests:**
 
+- Version bump 0.1.0 [\#2](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy/pull/2) ([TangRufus](https://github.com/TangRufus))
 - :heavy\_exclamation\_mark: Big bang [\#1](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy/pull/1) ([TangRufus](https://github.com/TangRufus))
 
 
