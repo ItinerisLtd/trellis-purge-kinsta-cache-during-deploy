@@ -1,10 +1,7 @@
 ---
+- debug:
+    msg: "Going to HTTP GET {{ site_env.wp_home }}/kinsta-clear-cache-all/ to purge Kinsta cache. Confirm this URL with Kinsta support team."
+
 - name: Purge Kinsta cache
   uri:
-    url: "{{ kinsta_purge_cache_endpoint }}"
-  when: kinsta_purge_cache_endpoint is defined
-
-- name: Warn when not purging Kinsta cache
-  debug:
-    msg: "Skip purging Kinsta cache because kinsta_purge_cache_endpoint is not defined. You have to purge them manually."
-  when: kinsta_purge_cache_endpoint is not defined
+    url: "{{ site_env.wp_home }}/kinsta-clear-cache-all/"
