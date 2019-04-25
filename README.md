@@ -64,7 +64,7 @@ deploy_after:
 
 ### How do you purge Kinsta cache?
 
-By inoking `$ wp kinsta cache purge` and `wp kinsta cache purge --object` during deploy.
+By invoking `wp kinsta cache purge` and `wp kinsta cache purge --object` during deploy.
 
 ## See Also
 
