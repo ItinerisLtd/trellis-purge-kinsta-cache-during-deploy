@@ -30,7 +30,7 @@ Purge [Kinsta](https://bit.ly/2NWj3sg) cache when [Trellis](https://github.com/r
 
 - Trellis [411981f](https://github.com/roots/trellis/commit/411981fb4a7ef9be079f50fbf317db9fc290e91b) or later
 - Ansible v2.6 or later
-- [Kinsta](https://bit.ly/2n1okDu) account with SSH access
+- [Kinsta Must-use Plugins](https://kinsta.com/knowledgebase/kinsta-mu-plugin/) v2.3.1 or later
 
 ## Installation
 
@@ -64,9 +64,7 @@ deploy_after:
 
 ### How do you purge Kinsta cache?
 
-By requesting `{{ site_env.wp_home }}/kinsta-clear-cache-all/` via HTTP GET.
-
-The full URL will be logged to console during deploy. Confirm it with Kinsta support team.
+By inoking `$ wp kinsta cache purge` and `wp kinsta cache purge --object` during deploy.
 
 ## See Also
 
