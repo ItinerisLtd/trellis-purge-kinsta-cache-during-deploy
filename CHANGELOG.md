@@ -1,10 +1,22 @@
 # Change Log
 
-## [0.2.1](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy/tree/0.2.1) (2018-08-17)
+## [0.3.0](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy/tree/0.3.0) (2019-04-25)
+[Full Changelog](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy/compare/0.2.1...0.3.0)
+
+**Closed issues:**
+
+- Use Kinsta wp cli to purge instead of HTTP request [\#8](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy/issues/8)
+
+**Merged pull requests:**
+
+- Purge Kinsta cache via WP CLI command instead of HTTP GET [\#9](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy/pull/9) ([TangRufus](https://github.com/TangRufus))
+
+## [0.2.1](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy/tree/0.2.1) (2018-08-16)
 [Full Changelog](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy/compare/0.2.0...0.2.1)
 
 **Merged pull requests:**
 
+- Version bump 0.2.1 [\#7](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy/pull/7) ([TangRufus](https://github.com/TangRufus))
 - Fix debug message line breaks [\#6](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy/pull/6) ([TangRufus](https://github.com/TangRufus))
 
 ## [0.2.0](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy/tree/0.2.0) (2018-08-06)
