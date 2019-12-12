@@ -34,23 +34,23 @@ Purge [Kinsta](https://bit.ly/2NWj3sg) cache when [Trellis](https://github.com/r
 
 ## Installation
 
-Add this role to `requirements.yml`:
+Add this role to `galaxy.yml`:
 ```yaml
-# requirements.yml
+# galaxy.yml
 - src: https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy
   version: 0.3.0 # Check for latest version!
 ```
 
 Run the command:
 ```bash
-➜ ansible-galaxy install -r requirements.yml --force
+➜ ansible-galaxy install -r galaxy.yml --force
 ```
 
 ## Role Variables
 
 Add this role to the [`deploy_after` hook](https://roots.io/trellis/docs/deploys/#hooks):
 ```yaml
-# group_vars/all/deploy-hooks.yml
+# roles/deploy/defaults/main.yml
 # Learn more on https://roots.io/trellis/docs/deploys/#hooks
 deploy_after:
   - "{{ playbook_dir }}/vendor/roles/trellis-purge-kinsta-cache-during-deploy/tasks/main.yml"
