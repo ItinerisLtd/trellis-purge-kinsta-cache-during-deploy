@@ -50,7 +50,7 @@ Run the command:
 
 Add this role to the [`deploy_after` hook](https://roots.io/trellis/docs/deploys/#hooks):
 ```yaml
-# roles/deploy/defaults/main.yml
+# group_vars/all/deploy-hooks.yml
 # Learn more on https://roots.io/trellis/docs/deploys/#hooks
 deploy_after:
   - "{{ playbook_dir }}/vendor/roles/trellis-purge-kinsta-cache-during-deploy/tasks/main.yml"
