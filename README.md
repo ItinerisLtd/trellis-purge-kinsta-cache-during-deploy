@@ -16,6 +16,7 @@ Purge [Kinsta](https://bit.ly/2NWj3sg) cache when [Trellis](https://github.com/r
 - [Usage](#usage)
 - [FAQs](#faqs)
   - [How do you purge Kinsta cache?](#how-do-you-purge-kinsta-cache)
+  - [Does it purge Kinsta CDN caches?](#does-it-purge-kinsta-cdn-caches)
 - [See Also](#see-also)
 - [Testing](#testing)
   - [Syntax Check](#syntax-check)
@@ -65,6 +66,16 @@ deploy_after:
 ### How do you purge Kinsta cache?
 
 By invoking `wp kinsta cache purge` and `wp kinsta cache purge --object` during deploy.
+
+### Does it purge Kinsta CDN caches?
+
+No.
+
+> Unfortunately no, there is no way on clearing that [Kinsta CDN] cache through command line for now.
+>
+> There are internal discussions and our developers are working on finding a solution, but unfortunately at this point we do not have an ETA or if that will be available.
+>
+> -- Kinsta Support
 
 ## See Also
 
