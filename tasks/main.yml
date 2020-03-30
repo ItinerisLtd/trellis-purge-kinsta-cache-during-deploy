@@ -20,12 +20,14 @@
       args:
         chdir: "{{ deploy_helper.current_path }}"
       changed_when: false
+      ignore_errors: true
 
     - name: Purge Kinsta object cache
       command: wp kinsta cache purge --object
       args:
         chdir: "{{ deploy_helper.current_path }}"
       changed_when: false
+      ignore_errors: true
 
   when:
     - trellis_purge_kinsta_cache_during_deploy_current_path.stat.exists

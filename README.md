@@ -16,6 +16,7 @@ Purge [Kinsta](https://bit.ly/2NWj3sg) cache when [Trellis](https://github.com/r
 - [Usage](#usage)
 - [FAQs](#faqs)
   - [How do you purge Kinsta cache?](#how-do-you-purge-kinsta-cache)
+  - [Why ignore errors?](#why-ignore-errors)
   - [Does it purge Kinsta CDN caches?](#does-it-purge-kinsta-cdn-caches)
 - [See Also](#see-also)
 - [Testing](#testing)
@@ -39,12 +40,15 @@ Add this role to `galaxy.yml`:
 ```yaml
 # galaxy.yml
 - src: https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy
-  version: 0.3.0 # Check for latest version!
+  version: x.x.x # Check for latest version!
 ```
 
 Run the command:
 ```bash
-➜ ansible-galaxy install -r galaxy.yml --force
+trellis galaxy install
+
+# Alternatively
+ansible-galaxy install -r galaxy.yml --force
 ```
 
 ## Role Variables
@@ -66,6 +70,12 @@ deploy_after:
 ### How do you purge Kinsta cache?
 
 By invoking `wp kinsta cache purge` and `wp kinsta cache purge --object` during deploy.
+
+### Why ignore errors?
+
+Since v0.4.0, this role ignore errors for `wp kinsta cache purge` and `wp kinsta cache purge --object`. This is because those 2 commands trigger HTTP requests to `localhost` which might trigger `429 too many requests` errors.
+
+Kinsta support refused to whitelist `localhost` requests from rate limits.
 
 ### Does it purge Kinsta CDN caches?
 
