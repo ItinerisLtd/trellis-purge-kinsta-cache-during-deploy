@@ -4,15 +4,13 @@
     - name: Purge Kinsta full page cache
       command: wp kinsta cache purge
       args:
-        chdir: "{{ deploy_helper.current_path }}"
-      changed_when: false
+        chdir: "{{ deploy_helper.new_release_path }}"
       ignore_errors: true
 
     - name: Purge Kinsta object cache
       command: wp kinsta cache purge --object
       args:
-        chdir: "{{ deploy_helper.current_path }}"
-      changed_when: false
+        chdir: "{{ deploy_helper.new_release_path }}"
       ignore_errors: true
 
   when:
