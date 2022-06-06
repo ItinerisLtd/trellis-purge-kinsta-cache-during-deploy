@@ -1,18 +1,4 @@
 ---
-- name: Web root directory exists?
-  stat:
-    path: "{{ deploy_helper.current_path }}"
-  register: trellis_purge_kinsta_cache_during_deploy_current_path
-
-- name: WordPress installed?
-  command: wp core is-installed --skip-plugins --skip-themes --require={{ deploy_helper.shared_path }}/tmp_multisite_constants.php
-  args:
-    chdir: "{{ deploy_helper.current_path }}"
-  register: trellis_purge_kinsta_cache_during_deploy_wp_installed
-  when: trellis_purge_kinsta_cache_during_deploy_current_path.stat.exists
-  changed_when: false
-  failed_when: trellis_purge_kinsta_cache_during_deploy_wp_installed.stderr | default("") != "" or trellis_purge_kinsta_cache_during_deploy_wp_installed.rc > 1
-
 - name: Purge Kinsta cache
   block:
     - name: Purge Kinsta full page cache
@@ -30,5 +16,4 @@
       ignore_errors: true
 
   when:
-    - trellis_purge_kinsta_cache_during_deploy_current_path.stat.exists
-    - trellis_purge_kinsta_cache_during_deploy_wp_installed.rc == 0
+    - wp_installed.rc == 0
